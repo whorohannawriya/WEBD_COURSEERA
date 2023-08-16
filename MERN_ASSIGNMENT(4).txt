@@ -1,0 +1,44 @@
+//sum of salaries greater than 10k
+
+var arr= [5000, 5500, 6000,10000,12000, 20000];
+const salary= arr.reduce((sum,currentValue)=>
+{if(currentValue>10000){
+    return sum+currentValue;
+}
+return accumulator;
+},0
+)
+
+//max salary from array
+
+var arr= [5000, 5500, 6000,10000,12000, 20000];
+const msalary= arr.reduce((com, current)=>Math.max(com,current),arr[0]);
+
+//count no of salary greater than 10k
+
+var arr= [5000, 5500, 6000,10000,12000, 20000];
+ const count= arr.reduce((sal,next)=>(next>10000)?++sal:sal,0)
+
+
+// //sorting name alphabetically
+
+ 
+
+employee.sort((a,b)=> a.salary- b.salary);
+console.log(employee);
+
+//In Employee Salaries add 10% Tax in Each Employee Salary and Store in a new Array, So don't modify the Orginal Array.
+//Hint : filter, map
+
+
+var employee= [{name:"Ram", salary: 3000},{name:"Tanmay", salary: 3500},
+{name:"Shyam", salary: 2000},
+{name:"Amit", salary: 76000}]
+
+
+const newsal= employee.map(employee=>({
+    name:employee.name,
+    newsalary: employee.salary*1.1
+})
+)
+console.log(newsal);

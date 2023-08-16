@@ -1,0 +1,90 @@
+Q1 area and perimeter of rectangle using different functions
+
+// using normal function 
+function Rectangle(a,b){
+    var area= a*b;
+    var perimeter= 2*(a+b);
+    console.log("Area is ",area," perimeter is ",perimeter);
+}
+const len= prompt("Enter length");
+const nlen= parseInt(len);
+const bre=prompt("Enter breadth");
+const nbre= parseInt(bre);
+
+Rectangle(nlen,nbre);
+
+//using arrow function 
+const area=(length,breadth)=> length*breadth;
+const peri=(length,breadth)=> 2*(length+breadth);
+
+const len= parseInt(prompt("Enter length"));
+const bre= parseInt(prompt("Enter breadth"));
+console.log(area(len,bre));
+console.log(peri(len,bre));
+
+//anonymous function 
+function cal(){
+    var area= function(x,y){
+        return x*y;
+    }
+	var peri= function (x,y){return 2*(x+y)}; 
+    return {area:area, peri:peri
+     }
+ }
+ const answer= cal();
+ console.log(answer.area(3,4));
+console.log(answer.peri(3,4));
+
+ //naming function 
+ function cal(){
+    var area= function rect(x,y){
+        return x*y;
+    }
+	var peri= function (x,y){return 2*(x+y)}; 
+    return {area:area, peri:peri
+     }
+ }
+ const answer= cal();
+ console.log(answer.area(3,4));
+console.log(answer.peri(3,4));
+
+
+Q2   Date and time question using different functions
+
+//normal function
+function time(){
+    var date=  new Date();
+    var myday= date.getDay();
+    var fday= {0:"Mon",1:"Tues",2:"Wed",3:"Thu",4:"fri",5:"sat",6:"Sun"}
+    
+    console.log("Today is",fday[myday]);
+    console.log("time is",date.getHours()+"-"+date.getMinutes()+"-"+date.getSeconds())
+    console.log("date is "+date.getDate()+"-"+parseInt(date.getMonth()+1)+"-" +date.getFullYear())
+}
+time()
+
+//using arrow function
+const time = () => {
+    const date = new Date();
+    const myday = date.getDay();
+    const fday = { 0: "Sun", 1: "Mon", 2: "Tue", 3: "Wed", 4: "Thu", 5: "Fri", 6: "Sat" };
+  
+    console.log("Today is", fday[myday]);
+    console.log("Time is", date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds());
+    console.log("Date is " + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear());
+  };
+  
+  time();
+
+
+  //using anonymous function 
+  const time= function(){
+    const date = new Date();
+    const myday = date.getDay();
+    const fday = { 0: "Sun", 1: "Mon", 2: "Tue", 3: "Wed", 4: "Thu", 5: "Fri", 6: "Sat" };
+  
+    console.log("Today is", fday[myday]);
+    console.log("Time is", date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds());
+    console.log("Date is " + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear());
+  }
+  console.log(time());

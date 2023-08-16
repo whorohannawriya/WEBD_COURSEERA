@@ -1,0 +1,51 @@
+Q1: Add function
+
+function add(...args){
+    let sum=0;
+   for(i=0; i<arguments.length; i++){
+    element= arguments[i];
+    if(typeof element==="number"&& !isNaN(element)){
+        sum+=element;
+    }
+    else if(typeof element==="string" && !isNaN(element)){
+        str= parseInt(element);
+        if(!isNaN(str)){
+            sum+=str;
+        }
+        
+    }
+    else if(element instanceof Array){
+        for(let digit of element){
+          sum+=  isNaN(parseInt(digit))?0:parseInt(digit);
+            
+        }
+    }
+    else if(typeof element=== "function"){
+        sum+= element //isNaN(parseInt(element))?0:parseInt(element)
+    }
+    
+   }
+   return sum;
+}
+function one(){
+    return 1;
+}
+function two(){
+    return 2;
+}
+console.log(add(1,[1,2,"3","one"],"two","2",one(), two()));
+
+
+Q2: Date and Current Time
+
+
+function time(){
+    var day=  new Date();
+    var myday= day.getDay();
+    var fday= {0:"Mon",1:"Tues",2:"Wed",3:"Thu",4:"fri",5:"sat",6:"Sun"}
+    
+    console.log("Today is",fday[myday]);
+    console.log("time is",day.getHours()+"-"+day.getMinutes()+"-"+day.getSeconds())
+    console.log("ddmmyy "+parseInt(day.getMonth()+1)+"-"+day.getDate()+"-" +day.getFullYear())
+}
+time()
